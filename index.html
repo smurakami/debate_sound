@@ -31,19 +31,29 @@
     </style>
     <script type="text/javascript">
       window.onload = function() {
-        button_a.onclick = function() {
-          sound_a.play();
-        };
-        button_b.onclick = function() {
-          sound_b.play();
-        };
-        button_c.onclick = function() {
-          sound_c.play();
-        };
-        button_d.onclick = function() {
-          sound_d.play();
-        };
-      }
+        bind(button_a, function() {
+          play(sound_a);
+        });
+        bind(button_b, function() {
+          play(sound_b);
+        });
+        bind(button_c, function() {
+          play(sound_c);
+        });
+        bind(button_d, function() {
+          play(sound_d);
+        });
+      };
+
+      var bind = function(button, func) {
+        button.onmousedown = func;
+        button.addEventListener('touchstart', func);
+      };
+
+      var play = function(sound) {
+        sound.currentTime = 0;
+        sound.play();
+      };
     </script>
   </head>
   <body>
