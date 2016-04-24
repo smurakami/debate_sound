@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEBATE-SOUND</title>
+    <meta charset='utf-8'>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+      body, html {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .sound {
+        width: 50%;
+        height: 50%;
+        float: left;
+      }
+
+      #button_a { background-color: #e74c3c; }
+      #button_b { background-color: #1abc9c; }
+      #button_c { background-color: #3498db; }
+      #button_d { background-color: #f1c40f; }
+
+    </style>
+    <script type="text/javascript">
+      window.onload = function() {
+        button_a.onclick = function() {
+          sound_a.play();
+        };
+        button_b.onclick = function() {
+          sound_b.play();
+        };
+        button_c.onclick = function() {
+          sound_c.play();
+        };
+        button_d.onclick = function() {
+          sound_d.play();
+        };
+      }
+    </script>
+  </head>
+  <body>
+    <div id="button_a" class="sound"></div>
+    <div id="button_b" class="sound"></div>
+    <div id="button_c" class="sound"></div>
+    <div id="button_d" class="sound"></div>
+    <div style="display: none">
+      <audio id="sound_a" preload="auto">
+        <source src="se_maoudamashii_battle_gun01.mp3" type="audio/mp3">
+      </audio>
+      <audio id="sound_b" preload="auto">
+        <source src="se_maoudamashii_onepoint04.mp3" type="audio/mp3">
+      </audio>
+      <audio id="sound_c" preload="auto">
+        <source src="se_maoudamashii_onepoint07.mp3" type="audio/mp3">
+      </audio>
+      <audio id="sound_d" preload="auto">
+        <source src="se_maoudamashii_onepoint13.mp3" type="audio/mp3">
+      </audio>
+    </div>
+  </body>
+</html>
