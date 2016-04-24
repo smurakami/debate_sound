@@ -30,6 +30,18 @@
 
     </style>
     <script type="text/javascript">
+      var support_touch = 'ontouchend' in document;
+
+      var bind = function(button, func) {
+        var eventname = support_touch ? 'touchstart' : 'mousedown';
+        button.addEventListener(eventname, func);
+      };
+
+      var play = function(sound) {
+        sound.currentTime = 0;
+        sound.play();
+      };
+
       window.onload = function() {
         bind(button_a, function() {
           play(sound_a);
@@ -43,16 +55,6 @@
         bind(button_d, function() {
           play(sound_d);
         });
-      };
-
-      var bind = function(button, func) {
-        button.onmousedown = func;
-        button.addEventListener('touchstart', func);
-      };
-
-      var play = function(sound) {
-        sound.currentTime = 0;
-        sound.play();
       };
     </script>
   </head>
